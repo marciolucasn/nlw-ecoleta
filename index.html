@@ -7,6 +7,7 @@
   <title>Ecoleta</title>
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/home.css">
+  <link rel="stylesheet" href="./styles/modal.css">
   <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 
@@ -25,11 +26,31 @@
         <h1>Seu marketplace de coleta de resíduos</h1>
         <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
 
-        <a href="/"><span></span><strong>Pesquisar pontos de coleta</strong></a>
+        <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
       </main>
 
     </div>
   </div>
+
+  <div id="modal" class="hide">
+    <div class="content">
+      <div class="header">
+        <h1>Pontos de Coleta</h1>
+        <a href="#">Fechar</a>
+      </div>
+      <form action="">
+        <label for="search"></label>
+        <div class="search field">
+          <input type="text" name="search" placeholder="Pesquise por cidade">
+          <button>
+            <img src="./assets/search.svg" alt="Buscar">
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./scripts/home.js"></script>
 </body>
 
 </html>

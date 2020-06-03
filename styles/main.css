@@ -3,6 +3,7 @@
 :root {
   --title-color: #322153;
   --primary-color: #34cb79;
+  --white-grey: #f0f0f5;
 }
 
 * {
@@ -26,7 +27,7 @@ html {
 }
 
 body {
-  background: #f0f0f5;
+  background: var(--white-grey);
   -webkit-font-smoothing: antialiased;
 }
 

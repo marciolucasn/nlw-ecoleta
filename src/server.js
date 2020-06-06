@@ -52,6 +52,8 @@ server.post("/savepoint", (req, res) => {
     if (err) {
       return console.log(err)
     }
+
+    console.log(values)
   }
 
   db.run(query, values, afterInsertData)
@@ -67,10 +69,9 @@ server.get("/search", (req, res) => {
     return res.render("search-results.njk", { total: 0 })
   }
 
-  db.all(`SELECT * FROM places WHERE city LIKE = '%${search}%'`, function(err, rows) {
+  db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows) {
     if (err) {
-      console.log(err)
-      return res.send("Erro no cadastro!")
+      return console.log(err)
     }
     const total = rows.length
     return res.render("search-results.njk", { places: rows, total })

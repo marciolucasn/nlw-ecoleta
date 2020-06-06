@@ -108,7 +108,15 @@
 {% block modal %}
   {% if saved %}
     {% include "partials/point-created.njk" %}
+
+    {% else %}
+
+    {% if err %}
+      {% include "partials/err.njk" %}
+    {% endif %}
+    
   {% endif %}
+
 {% endblock modal %}
 
 {% block scripts %}

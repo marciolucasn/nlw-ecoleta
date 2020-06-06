@@ -23,7 +23,6 @@ server.get("/create-point", (req, res) => {
 })
 
 server.post("/savepoint", (req, res) => {
-
   // Inserir dados na tabela
   const query = `
     INSERT INTO places (
@@ -50,10 +49,9 @@ server.post("/savepoint", (req, res) => {
 
   function afterInsertData(err) {
     if (err) {
-      return console.log(err)
+      console.log(err)
+      return res.render("create-point.njk", { err: true })
     }
-
-    console.log(values)
   }
 
   db.run(query, values, afterInsertData)
@@ -62,9 +60,8 @@ server.post("/savepoint", (req, res) => {
 })
 
 server.get("/search", (req, res) => {
-
   const search = req.query.search
-
+  
   if (search == "") {
     return res.render("search-results.njk", { total: 0 })
   }
@@ -74,9 +71,8 @@ server.get("/search", (req, res) => {
       return console.log(err)
     }
     const total = rows.length
-    return res.render("search-results.njk", { places: rows, total })
+    return res.render("search-results.njk", { places: rows, total, search })
   })
-
 })
 
 server.listen(3000) // Ligar o servidor

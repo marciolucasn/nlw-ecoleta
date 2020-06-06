@@ -82,3 +82,13 @@
   color: #fff;
   margin-top: 32px;
 }
+
+#modal.point .content img {
+  width: 64px;
+  height: 64px;
+}
+
+#modal.point .content p {
+  color: #fff;
+  font-size: 24px;
+}
